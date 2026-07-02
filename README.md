@@ -31,7 +31,12 @@ recommendation-engine-self/
 ├── scorer.py
 ├── evaluator.py
 ├── sample_data.py
-├── test.py
+├── requirements.txt
+├── tests/
+│   ├── test_similarity.py
+│   ├── test_candidate_gen.py
+│   ├── test_scorer.py
+│   └── test_evaluator.py
 └── README.md
 ```
 
@@ -160,27 +165,33 @@ The dataset is intentionally simple to demonstrate recommendation system concept
 
 ## Testing
 
-The project includes a test suite that validates:
+The project includes a comprehensive `pytest` suite that validates:
 
 * Similarity calculations
 * Candidate generation
 * Recommendation ranking
 * Evaluation metrics
-* Edge case handling
-* Complete recommendation pipeline execution
+* Edge cases and error handling
+
+To run the tests, first install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
 
 Run all tests using:
 
 ```bash
-python test.py
+python -m pytest tests/
 ```
 
 ---
 
 ## Technologies Used
 
-* Python 3
+* Python 3 (with PEP 484 Type Hints)
 * Built-in Python libraries
+* `pytest` for automated testing
 * Object-Oriented Programming
 * Dictionary-based data structures
 * Mathematical similarity metrics
